@@ -1,0 +1,105 @@
+clase Mando implements Comparable<Mando>
+	- modelo: String
+	- anchura: double
+	- altura: double
+	- precio: double
+	
+	+Mando(modelo, anchura, altura)
+	+Mando(modelo, anchura, altura, precio)
+	
+	+getModelo(): String
+	+getAnchura(): double
+	+getAltura(): double
+	+getPrecio(): double
+	+isEncendido(): boolean
+	
+	+setPrecio(double precio)
+	
+	+encender()
+	+apagar()
+	
+	+equals(Object o): boolean
+	+compareTo(Mando m): int
+	+toString(): String
+
+<<interface>> Volumen
+	+subirVolumen()
+	+bajarVolumen()
+	
+<<interface>> Velocidad
+	+subirVelocidad(): boolean
+	+bajarVelocidad(): boolean
+
+clase MandoTV extends Mando implements Volumen
+	- volumen: int
+	- canal: int (=1)
+	
+	+MandoTV(modelo, anchura, altura)
+	+MandoTV(modelo, anchura, altura, precio)
+	
+	+getVolumen():int
+	+getCanal():int
+	
+	+setCanal(int canal)
+	
+	--a implementar--
+	+subirVolumen()
+	+bajarVolumen()
+	
+	--heredados--
+	+toString():String
+	
+clase MandoMinicadena extends Mando implements Volumen
+	- volumen: int
+	
+	+MandoMinicadena(modelo, anchura, altura)
+	+MandoMinicadena(modelo, anchura, altura, precio)
+	
+	+getVolumen():int
+	
+	--a implementar--
+	+subirVolumen()
+	+bajarVolumen()
+	
+	--heredados--
+	+toString():String
+	
+clase MandoAspiradora extends Mando implements Velocidad
+	- velocidad: int (=0)(max 3)
+	
+	+MandoAspiradora(modelo, anchura, altura)
+	+MandoAspiradora(modelo, anchura, altura, precio)
+	
+	+getVelocidad()
+	
+	--a implementar--
+	+subirVelocidad()
+	+bajarVelocidad()
+	
+	--heredados--
+	+toString():String
+	
+clase MandoAireAcondicionado extends Mando implements Velocidad
+	enum Modo = {FRIO, CALOR}
+	
+	- velocidad: int (=0)(max 5)
+	- modo: Modo (FRIO)
+	- temperatura: int
+	
+	+MandoAireAcondicionado(modelo, anchura, altura)
+	+MandoAireAcondicionado(modelo, anchura, altura, precio)
+	
+	+getVelocidad(): int
+	+getModo(): String
+	+getTemperatura(): int
+	
+	+setTemperatura(int temp)
+	
+	+cambiarModo()
+	
+	--a implementar--
+	+subirVelocidad()
+	+bajarVelocidad()
+	
+	--heredados--
+	+toString():String
