@@ -1,10 +1,8 @@
 package mandos;
 
-import java.util.Objects;
+public abstract class Mando implements Comparable<Mando> {
 
-public class Mando implements Comparable<Mando> {
-
-	private String modelo = "";
+	protected String modelo = "";
 	private double altura;
 	private double anchura;
 	private double precio = 1.0;
@@ -73,20 +71,9 @@ public class Mando implements Comparable<Mando> {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		boolean res = false;
-		Mando man;
-		
-		if(obj instanceof Mando) {
-			man = (Mando) obj;
-			if(this.modelo.equalsIgnoreCase(man.modelo)) {
-				res = true;
-			}
-		}
-		
-		return res;
-	}
+	public abstract boolean equals(Object obj);
 
+	
 	@Override
 	public int compareTo(Mando m) {
 		return this.modelo.compareToIgnoreCase(m.modelo);
@@ -95,13 +82,13 @@ public class Mando implements Comparable<Mando> {
 	@Override
 	public String toString() {
 		String res = "";
-		
+
 		res += "Modelo: " + this.modelo + "\n";
 		res += "Altura: " + this.altura + "\n";
 		res += "Anchura: " + this.anchura + "\n";
 		res += "Precio: " + this.precio + "\n";
 		res += encendido ? "ON" : "OFF";
-		
+
 		return res;
 	}
 

@@ -13,12 +13,11 @@ public class Principal {
 	public static void main(String[] args) {
 		Mando[] mandos = new Mando[10];
 
-		mandos[0] = new Mando("LG", 13, 3);
+		mandos[0] = new MandoTV("LG", 13, 3);
 		mandos[1] = new MandoAireAcondicionado("Fujitsu", 15, 5);
 		mandos[2] = new MandoTV("Samsung", 10, 5);
 		mandos[3] = new MandoMinicadena("Sony", 8, 4);
 		mandos[4] = new MandoAspiradora("Dyson", 12, 3);
-		mandos[5] = new Mando("Panasonic", 12, 3, 10);
 		mandos[6] = new MandoTV("Huawei", 12, 3, 20);
 		mandos[7] = new MandoAspiradora("Bosch", 5, 3, 5);
 		mandos[8] = new MandoMinicadena("Philips", 4, 2, 8);

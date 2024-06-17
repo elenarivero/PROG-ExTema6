@@ -53,4 +53,19 @@ public class MandoTV extends Mando implements Volumen {
 		res += "Canal: " + this.canal + "\n";
 		return res;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		boolean res = false;
+		//MandoAireAcondicionado maa;
+		
+		if(obj instanceof MandoTV maa) {
+			//maa = (MandoAireAcondicionado) obj;
+			if(this.modelo.equals(maa.modelo)) {
+				res = true;
+			}
+		}
+		
+		return res;
+	}
 }

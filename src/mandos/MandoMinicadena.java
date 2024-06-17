@@ -38,4 +38,19 @@ public class MandoMinicadena extends Mando implements Volumen{
 		res += "Volumen: " + this.volumen + "\n";
 		return res;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		boolean res = false;
+		//MandoAireAcondicionado maa;
+		
+		if(obj instanceof MandoMinicadena maa) {
+			//maa = (MandoAireAcondicionado) obj;
+			if(this.modelo.equals(maa.modelo)) {
+				res = true;
+			}
+		}
+		
+		return res;
+	}
 }

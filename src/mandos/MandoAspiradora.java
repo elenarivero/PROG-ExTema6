@@ -48,4 +48,19 @@ public class MandoAspiradora extends Mando implements Velocidad {
 		res += "Velocidad: " + this.velocidad + "\n";
 		return res;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		boolean res = false;
+		//MandoAireAcondicionado maa;
+		
+		if(obj instanceof MandoAspiradora maa) {
+			//maa = (MandoAireAcondicionado) obj;
+			if(this.modelo.equals(maa.modelo)) {
+				res = true;
+			}
+		}
+		
+		return res;
+	}
 }

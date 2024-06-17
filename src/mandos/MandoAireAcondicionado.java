@@ -85,5 +85,20 @@ public class MandoAireAcondicionado extends Mando implements Velocidad {
 		
 		return res;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean res = false;
+		//MandoAireAcondicionado maa;
+		
+		if(obj instanceof MandoAireAcondicionado maa) {
+			//maa = (MandoAireAcondicionado) obj;
+			if(this.modelo.equals(maa.modelo)) {
+				res = true;
+			}
+		}
+		
+		return res;
+	}
 	
 }
